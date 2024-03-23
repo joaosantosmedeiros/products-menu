@@ -40,7 +40,7 @@
 
 @media only screen and (min-width: 600px) {
   .home__content__items {
-    margin: 2em 0 3em;
+    margin: 2em 3em;
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
@@ -51,6 +51,8 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 4em;
     row-gap: 3em;
+    margin-right: 6em;
+    margin-left: 6em;
   }
 }
 
@@ -58,6 +60,7 @@
   background-color: rgb(210, 255, 241);
   border-radius: 10px;
   padding: 1em;
+  max-width: 70vw;
 }
 
 @media only screen and (min-width: 1000px) {
