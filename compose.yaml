@@ -1,0 +1,36 @@
+services:
+  db:
+    container_name: products_menu_db
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=productsmenu'
+      - 'POSTGRES_PASSWORD=postgres'
+      - 'POSTGRES_USER=postgres'
+    ports:
+      - 5432
+  backend:
+    build:
+      context: .
+      dockerfile: products-menu-back/Dockerfile
+    container_name: products_menu_backend
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/productsmenu
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_SHOW_SQL=true
+      - SPRING_JPA_HIERNATE_DDL_AUTO=update
+
+    ports:
+      - 8080:8080
+  frontend:
+    build: 
+      context: .
+      dockerfile: products-menu-front/Dockerfile
+    container_name: products_menu_frontend
+    depends_on:
+      - backend
+    ports:
+      - 4200:4200

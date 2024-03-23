@@ -1,0 +1,66 @@
+<div class="container">
+  <h2 class="container__title">Cadastrar produto</h2>
+  <form
+    class="container__form"
+    action="http://localhost:8080/product"
+    method="post"
+    (submit)="createProduct()"
+  >
+    <div class="container__form__name">
+      <p>
+        <label for="name">Nome</label>
+      </p>
+      <input
+        class="container__form__input"
+        id="name"
+        type="text"
+        name="name"
+        [(ngModel)]="request.name"
+        required
+        minlength="1"
+      />
+    </div>
+
+    <div class="container__form__description">
+      <p>
+        <label for="description">Descrição</label>
+      </p>
+      <textarea
+        class="container__form__input"
+        name="descrpition"
+        id="description"
+        cols="23"
+        rows="10"
+        [(ngModel)]="request.description"
+        required
+        minlength="3"
+      ></textarea>
+    </div>
+
+    <div class="container__form__price">
+      <p>
+        <label for="price">Preço</label>
+      </p>
+      <input
+        class="container__form__input"
+        id="price"
+        type="number"
+        name="price"
+        [(ngModel)]="request.price"
+        min="1"
+      />
+    </div>
+
+    <div class="container__form__disponible">
+      <label for="disponible">Disponível</label>
+      <input
+        type="checkbox"
+        name="disponible"
+        id="disponible"
+        [(ngModel)]="request.isDisponible"
+      />
+    </div>
+
+    <input class="container__form__submit" type="submit" value="Enviar" />
+  </form>
+</div>

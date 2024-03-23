@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container__title {
+  width: 60vw;
+  margin-top: 1em;
+}
+
+@media only screen and (min-width: 1000px) {
+  .container__title {
+    margin-top: 3em;
+  }
+}
+
+.container__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+  justify-content: center;
+
+  margin-top: 2em;
+}
+
+.container__form__input {
+  width: 60vw;
+  padding: 0.5em;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .container__form__name,
+  .container__form__price {
+    width: 60vw;
+  }
+
+  .container__form__name > input,
+  .container__form__price > input {
+    width: 30vw;
+  }
+}
+
+.container__form__disponible {
+  width: 60vw;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.container__form__submit {
+  padding: 1em;
+  border: 1px solid black;
+  background-color: white;
+
+  width: 20vw;
+
+  cursor: pointer;
+}
+
+.container__form__submit:hover {
+  transform: scale(1.1);
+  transition: all 0.2s;
+}
+
+input:invalid,
+textarea:invalid {
+  border: 1px solid red;
+}

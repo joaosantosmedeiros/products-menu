@@ -1,0 +1,15 @@
+.home__link__title {
+  margin: 0.5em 0 0 0.5em;
+  width: fit-content;
+}
+
+.home__link__title:hover {
+  transform: scale(1.2);
+  transition: all 0.2s;
+}
+
+@media only screen and (min-width: 600px) {
+  .home__link__title {
+    margin: 1.5em 0 0 2em;
+  }
+}

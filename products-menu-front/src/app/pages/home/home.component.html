@@ -1,0 +1,17 @@
+<div class="home">
+  <div class="home__content">
+    <a class="home__content__link" [routerLink]="'new'">
+      Cadastrar um novo produto
+    </a>
+    <div class="home__content__items">
+      <div class="home__content__items__item" *ngFor="let product of products">
+        <p class="home__content__items__item__name">
+          <strong>Produto</strong>: {{ product.nome }}
+        </p>
+        <p class="home__content__items__item__price">
+          <strong>Preço</strong>: R${{ product.price.toFixed(2) }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
